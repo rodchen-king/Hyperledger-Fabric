@@ -104,7 +104,7 @@ f748da464d2693dd9a80febf27b251a8dc3592387ee35741620c9c96cdd71fb7, A借C 200元, 
 ### 底层结构
 如果把区块链系统作为一个状态机，则每次交易意味着一次状态改变；生成的区块，就是参与者对其中交易导致状态改变结果的共识。区块链的目标是实现一个分布的数据记录账本，这个账本只允许添加、不允许删除。账本底层的基本结构是一个线性的链表。链表由一个个“区块”串联组成（如下图所示），后继区块中记录前导区块的哈希（Hash）值。某个区块（以及块里的交易）是否合法，可通过计算哈希值的方式进行快速检验。
 
-![blockchain](https://github.com/HeTingwei/ReadmeLearn/blob/master/avatar1.jpg)
+<img src="https://raw.githubusercontent.com/rodchen-king/Hyperledger-Fabric/master/document-images/blockchain_example.png" width="800" height="200" alt="blockchain_example"/>
 
 ## 运行
 

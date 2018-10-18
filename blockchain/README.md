@@ -92,16 +92,7 @@ f748da464d2693dd9a80febf27b251a8dc3592387ee35741620c9c96cdd71fb7, A借C 200元, 
         data := string(block.Index) + string(block.TimeStamp) + block.PrevBlockHash + block.Data
         blockInBytes := sha256.Sum256([]byte(data))
         return hex.EncodeToString(blockInBytes[:])
-    }
-
-基于 Go 构建一个区块链 Demo
-
-## 安装
-
-    `// 获取项目源码
-    $ cd $GOPATH/src
-    $ git clone git@github.com:AustinDeng/BlockChain.git`
-    
+    }    
 
 ## 运行
 

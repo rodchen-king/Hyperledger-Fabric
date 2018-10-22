@@ -51,4 +51,35 @@
     三是，假如有人说那我通过特有的方式创造了相同时间戳的双重支付记录。那么就会产生分叉，分叉的最终结果还是取最长的链，只会有一条记录记录在区块链上。
 
 
+### 如何判断用户当前有足够的比特币用于支付
+    矿工工作：确认时首先要确认之前reference的这笔交易是否存在，同时还要检查在这之前有没有将比特币支付过了。这一切确认后，这笔交易有效性就被确认了。
+
 ## 时间戳
+### 时间戳的意义
+    时间戳的意义在于避免双重支付问题，时间戳的单位是块。块的生成需要矿工的工作，后面再看。这里直接先说时间戳。
+    A timestamp server works by taking a hash of a block of items to be timestamped and widely publishing the hash, such as in a
+    newspaper or Usenet post [2-5].
+
+    感觉网上中文翻译怪怪的： 时间戳服务器通过对以区块(block)形式存在的一组数据实施随机散列而加上时间戳。
+    我看了这个就纠结于随即散列是个啥意思？
+    a hash of a block of items：多条交易构成块的hash值。
+    to be timestamped：具有时间戳含义。
+    我的理解是：时间戳通过多条交易构成块的hash具有时间戳含义并且将当前hash广播出去，当前hash代表当前区块。
+
+    当前hash值具有时间戳含义通过区块hash的计算就可以知道了：https://blog.csdn.net/It_rod/article/details/83155064#t7前面文章也有介绍，区块的hash计算如下。
+    func calculateHash(block Block) string {
+        data := string(block.Index) + string(block.TimeStamp) + block.PrevBlockHash + block.Data
+        blockInBytes := sha256.Sum256([]byte(data))
+        return hex.EncodeToString(blockInBytes[:])
+    }   
+
+### 如何避免双重支付
+    前面内容了解到区块的hash具有时间戳。现在假设两条交易在同一区块，则验证第一条有效之后，第二条则无效。
+    如果在不同区块，则区块具有时间戳，前面区块的交易有效之后，第二条记录则无效。
+    如果碰到区块分叉，则最终只会有一个区块会成功上链，也不会出现双重支付。
+
+### 时间戳的计算
+    因为区块的产生是不同矿工工作出来的，那么时间戳以谁为准呢？
+    “多数人的正义”，时间来自于连接的其他节点（node）时间的中位数（mean，是个数学概念，比平均值更不受极端数字影响），要求连接的节点（node）数量至少为5，中位数和本地系统时间差别不超过70分钟，否则会提醒你更新本机的时间。同时，在接收到新的block时会拒绝时间与自己差距+2小时和-(前11个block时间中位数)的block
+
+### 中位数

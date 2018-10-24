@@ -97,7 +97,8 @@
     时间戳的运行机制就是两个区块产生间隔中所有交易进行Hash运算，加盖时间戳，我们就得到了一个按时间序列产生
     的交易记录了，这就是区块链。
 
-    当前hash值具有时间戳含义通过区块hash的计算就可以知道了：https://blog.csdn.net/It_rod/article/details/83155064#t7前面文章也有介绍，区块的hash计算如下。
+    当前hash值具有时间戳含义通过区块hash的计算就可以知道了：https://blog.csdn.net/It_rod/article/details/83155064#t7
+    前面文章也有介绍，区块的hash计算如下。
     ```
     func calculateHash(block Block) string {
         data := string(block.Index) + string(block.TimeStamp) + block.PrevBlockHash + block.Data
@@ -164,7 +165,8 @@
     的交易列表则附加在区块头后面，其中的第一笔交易是coinbase交易，这是一笔为了让矿工获得奖励及手续费的特殊交易。
 
 
-    区块结构如图：来源https://en.bitcoin.it/wiki/Block
+    区块结构如图：来源
+    https://en.bitcoin.it/wiki/Block
 
     Merkle Root Hash值计算如图：
 
@@ -193,7 +195,9 @@
 
     新难度值 = 旧难度值 * ( 过去2016个区块花费时长 / 20160 分钟 )
 
-    可以查看https://bitcoinwisdom.com/bitcoin/difficulty 困难度调整。
+    可以查看
+    https://bitcoinwisdom.com/bitcoin/difficulty 
+    困难度调整。
 
 ## 网络
 
@@ -237,7 +241,8 @@
  所有的区块头部放到内存中都不是问题。  
 
     目前比特币似乎没有在这个方面有相关开发说明。好像并没有使用这个方案。在晚上看到有强制删除的，删除的
-区块的所有内容。但是当需要trsanction history的时候还需要下载以前的记录。http://8btc.com/thread-91737-1-1.html  
+区块的所有内容。但是当需要trsanction history的时候还需要下载以前的记录。
+http://8btc.com/thread-91737-1-1.html  
 
 ## 组合和分割价值
 
@@ -276,7 +281,8 @@
    5. 一段时间，小兰进行比特币交易，创建交易必须由输入。小明接受交易内容，需要创建一个签名脚本 - 
    满足小兰在之前输出pubkey脚本里列出的条件的一组数据参数。签名脚本也称为scriptSigs**也就是上面input结构中的“Txin-script / scriptSig”**。  
 
-    如何验证签名的就不深入了解了，详情：https://blog.csdn.net/jerry81333/article/details/56824166
+    如何验证签名的就不深入了解了，详情：
+    https://blog.csdn.net/jerry81333/article/details/56824166
 
 #### P2PKH
     Pubkey script: OP_DUP OP_HASH160 <PubKeyHash> OP_EQUALVERIFY OP_CHECKSIG  
@@ -304,7 +310,8 @@
     ▷如果交易费用太低以至于无法进入一个空的区块，交易将被拒绝。  
     ▷每一个输入的解锁脚本必须依据相应输出的锁定脚本来验证。  
 
-    block rule 查看文章https://en.bitcoin.it/wiki/Protocol_rules#.22tx.22_messages  
+    block rule 查看文章
+    https://en.bitcoin.it/wiki/Protocol_rules#.22tx.22_messages  
 
 ## 钱包是什么？
 

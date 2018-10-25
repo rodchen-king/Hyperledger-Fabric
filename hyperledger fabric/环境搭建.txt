@@ -1,0 +1,9 @@
+1. virturebox
+2. vagrant
+
+搭建环境，
+
+为什么采用这个方式呢？
+1. 我本地windows，以前为了安装环境重装了10了次系统才装好，还是使用虚拟机搭建ubuntu 16.04作为开发系统方便。
+2. 可以按照hyperledger fabric官网环境配置。
+

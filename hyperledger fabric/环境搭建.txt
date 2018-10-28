@@ -7,3 +7,8 @@
 1. 我本地windows，以前为了安装环境重装了10了次系统才装好，还是使用虚拟机搭建ubuntu 16.04作为开发系统方便。
 2. 可以按照hyperledger fabric官网环境配置。
 
+1. vagrant ssh进入虚拟机
+
+2. https://hyperledger.github.io/composer/unstable/installing/installing-prereqs 安装环境
+
+3. 安装

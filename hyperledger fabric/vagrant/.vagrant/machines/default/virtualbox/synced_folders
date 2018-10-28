@@ -1,1 +1,1 @@
-{"virtualbox":{"/vagrant_data":{"guestpath":"/vagrant_data","hostpath":"D:/git/Hyperledger-Fabric/hyperledger fabric/vagrant/data","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"D:/git/Hyperledger-Fabric/hyperledger fabric/vagrant","disabled":false,"__vagrantfile":true}}}
+{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"E:/Hyperledger-Fabric/hyperledger fabric/vagrant","disabled":false,"__vagrantfile":true}}}

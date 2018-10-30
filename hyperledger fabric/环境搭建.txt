@@ -10,5 +10,26 @@
 1. vagrant ssh进入虚拟机
 
 2. https://hyperledger.github.io/composer/unstable/installing/installing-prereqs 安装环境
+	
 
-3. 安装
+	sudo curl -O https://hyperledger.github.io/composer/unstable/prereqs-ubuntu.sh
+
+	sudo chmod u+x prereqs-ubuntu.sh
+
+
+	sudo ./prereqs-ubuntu.sh
+
+	log out  and login 
+
+
+3. 更新清华源
+
+   cp sources.list /etc/apt
+
+   sudo apt-get update
+
+
+4. curl -sSL http://bit.ly/2ysbOFE | bash -s 1.2.0
+
+   export PATH=<path to download location>/bin:$PATH
+

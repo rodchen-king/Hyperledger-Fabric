@@ -1,4 +1,4 @@
-1. virturebox
+1. virtualbox
 2. vagrant
 
 搭建环境，
@@ -9,7 +9,13 @@
 
 1. vagrant ssh进入虚拟机
 
-2. https://hyperledger.github.io/composer/unstable/installing/installing-prereqs 安装环境
+2. 更新清华源
+
+   cp sources.list /etc/apt
+
+   sudo apt-get update
+
+3. https://hyperledger.github.io/composer/unstable/installing/installing-prereqs 安装环境
 	
 
 	sudo curl -O https://hyperledger.github.io/composer/unstable/prereqs-ubuntu.sh
@@ -20,13 +26,6 @@
 	sudo ./prereqs-ubuntu.sh
 
 	log out  and login 
-
-
-3. 更新清华源
-
-   cp sources.list /etc/apt
-
-   sudo apt-get update
 
 
 4. curl -sSL http://bit.ly/2ysbOFE | bash -s 1.2.0
